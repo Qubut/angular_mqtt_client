@@ -1,6 +1,18 @@
-<h2>
-    publish a Message on {{topic}}
-</h2>
-<ng-container *ngIf="data |async as d">
-  <h1 style="font-family: cursive;">{{d.payload}}</h1>  
-</ng-container>
+<section class=" pt-16 my-16 flex flex-col justify-center align-middle">
+  <ng-container *ngIf="message | async as m; else nothing">
+    <div *ngIf="parse(m.payload) as data">
+      <div
+        class="state state-crowded"
+        *ngIf="data['crowded'] && data['crowded'] == true; else free"
+      ></div>
+      <ng-template #free>
+        <div class="state state-free"></div>
+      </ng-template>
+    </div>
+  </ng-container>
+  <ng-template #nothing>
+    <h1 style="font-family: cursive" class="text-6xl text-center text-blue-400">
+      Nothing received
+    </h1>
+  </ng-template>
+</section>

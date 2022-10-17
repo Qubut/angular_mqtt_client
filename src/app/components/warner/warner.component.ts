@@ -10,12 +10,18 @@ import { TopicsMqttService } from 'src/app/services/topics.mqtt.service';
 })
 export class WarnerComponent implements OnInit {
   topic = '/home/prototype';
-  data = new Observable<IMqttMessage>()
-  _subscription= new Subscription()
+  message = new Observable<IMqttMessage>();
+  _subscription = new Subscription();
   constructor(private _topicMqttService: TopicsMqttService) {}
 
   ngOnInit(): void {
-  this.data =  this._topicMqttService.topic(this.topic)
-}
-
+    this.message = this._topicMqttService.topic(this.topic);
+  }
+  parse(payload: any) {
+    try {
+      return JSON.parse(payload.toString());
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

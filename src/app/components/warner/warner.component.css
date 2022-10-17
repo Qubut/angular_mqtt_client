@@ -1,0 +1,13 @@
+.state{
+    @apply w-[80vw];
+    @apply h-[70vh];
+    @apply m-auto;
+    @apply top-1/2
+
+}
+ .state-crowded{
+    @apply bg-red-600;
+ }
+ .state-free{
+    @apply bg-green-600;
+ }
