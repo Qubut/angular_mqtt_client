@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IMqttServiceOptions, MqttModule } from 'ngx-mqtt';
 import { environment as env } from '../environments/environment';
+import { WarnerComponent } from './components/warner/warner.component';
 
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: env.mqtt.server,
@@ -13,7 +14,7 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   path: '',
 };
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WarnerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
