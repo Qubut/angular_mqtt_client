@@ -6,12 +6,13 @@ export const environment = {
   production: false,
 	hmr: false,
 	http: {
-		apiUrl: '',
+    apiUrl:'localhost:1883',
+    
 	},
 	mqtt: {
 		server: 'localhost',
-		protocol: "wss",
-		port: 1883
+		protocol: "ws",
+		port: 8081
 	}
 };
 
