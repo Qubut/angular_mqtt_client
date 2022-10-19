@@ -17,7 +17,7 @@
   background-color: red;
 }
 .state-free {
-  background-color: green;
+  background-color: #00f700;
 }
 .zustand {
   @apply text-2xl text-white font-bold;
