@@ -14,12 +14,12 @@
    @apply text-right;
 }
 .state-crowded {
-  @apply bg-red-600;
+  background-color: red;
 }
 .state-free {
-  @apply bg-green-600;
+  background-color: green;
 }
 .zustand {
   @apply text-2xl text-white font-bold;
-  @apply mb-20;
+  @apply mb-10;
 }
