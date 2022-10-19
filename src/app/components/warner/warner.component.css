@@ -1,13 +1,25 @@
-.state{
-    @apply w-[80vw];
-    @apply h-[70vh];
-    @apply m-auto;
-    @apply top-1/2
-
+.state {
+  @apply rounded-lg;
+  @apply w-[80vw];
+  @apply h-[70vh];
+  @apply m-auto;
+  @apply top-1/2;
 }
- .state-crowded{
-    @apply bg-red-600;
- }
- .state-free{
-    @apply bg-green-600;
- }
+.wrapper {
+  @apply w-[80vw];
+  @apply justify-center;
+  @apply grid grid-cols-2;
+}
+.wrapper:last-child{
+   @apply text-right;
+}
+.state-crowded {
+  @apply bg-red-600;
+}
+.state-free {
+  @apply bg-green-600;
+}
+.zustand {
+  @apply text-2xl text-white font-bold;
+  @apply mb-20;
+}

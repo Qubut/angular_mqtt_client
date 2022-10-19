@@ -1,14 +1,25 @@
-<section class=" pt-16 my-16 flex flex-col justify-center align-middle">
+<section class="pt-16 my-16 flex flex-col justify-center align-middle">
+  
   <ng-container *ngIf="message | async as m; else nothing">
-    <div *ngIf="parse(m.payload) as data">
-      <div
-        class="state state-crowded"
-        *ngIf="data['crowded'] && data['crowded'] == true; else free"
-      ></div>
-      <ng-template #free>
-        <div class="state state-free"></div>
-      </ng-template>
-    </div>
+    <ng-container *ngIf="parse(m.payload) as data">
+      <div class="wrapper">
+        <div class="zustand text-center">Zustand</div
+        ><div class="zustand text-right" *ngIf="data['crowded'] && data['crowded'] == true; else frei"
+          >gedrängt</div
+        >
+        <ng-template #frei>
+          <div class="zustand text-right">frei</div>
+        </ng-template>
+      </div>
+      
+        <div
+          class="state state-crowded"
+          *ngIf="data['crowded'] && data['crowded'] == true; else free"
+        ></div>
+        <ng-template #free>
+          <div class="state state-free"></div>
+        </ng-template>
+    </ng-container>>
   </ng-container>
   <ng-template #nothing>
     <h1 style="font-family: cursive" class="text-6xl text-center text-blue-400">
