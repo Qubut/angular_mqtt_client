@@ -15,5 +15,11 @@ cafile `pathTo/cafile`
 keyfile `pathTo/keyfile`
 crtfile `pathTo/crtfile`
 ```
+build the application in production mode using
+`docker build image-name:version .`
+or in development mode using
+`docker build -f=Dockerfile.dev image-name:version .`
+and the use `docker run -d --network=host image-name:version` to run the container
 
+the application is then on localhost:80 for prod. and localhost:4200 for dev.
 

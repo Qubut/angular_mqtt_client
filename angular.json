@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "warning-app"
+  "defaultProject": "warning-app",
+  "cli": {
+    "analytics": false
+  }
 }
